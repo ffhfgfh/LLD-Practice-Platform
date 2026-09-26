@@ -1,145 +1,269 @@
-# LLD Practice Platform 🏗️
+<div align="center">
 
-> **Interactive Low-Level Design (LLD) Mastery & Interview Preparation Platform**
-> Practice canonical object-oriented design problems, structure classes and responsibilities, visualize Mermaid class diagrams, receive explainable deterministic and AI-assisted feedback across 9 design dimensions, and iterate through attempt history.
+# 🏗️ LLD Practice Platform
 
----
+### *Interactive Low-Level Design (LLD) Mastery & Interview Preparation Platform*
 
-## 🌟 Key Highlights & Features
+Practice canonical object-oriented design problems, structure classes and responsibilities, visualize live Mermaid UML diagrams, and receive explainable deterministic & AI-assisted feedback across 9 design dimensions.
 
-- **End-to-End Learner Journey**:
-  `Choose Problem` &rarr; `View Requirements` &rarr; `Start Attempt` &rarr; `Design Solution` &rarr; `Submit` &rarr; `Evaluation` &rarr; `Explainable Feedback` &rarr; `Review History` &rarr; `Try Again`.
-- **10 Canonical Seeded LLD Challenges**:
-  1. **Parking Lot System** (Medium, ~45m) — Multi-vehicle types, spot sizing, multi-floor capacity, automated ticketing gates, dynamic pricing strategies, spot allocation algorithms.
-  2. **Elevator System** (Hard, ~60m) — Multi-car elevator bank, internal/external hall calls, SCAN/LOOK dispatching strategy, motion state machine, door & weight sensors.
-  3. **Vending Machine System** (Easy, ~30m) — Product inventory slots, state-driven transaction execution, multi-denomination cash balance, optimal coin change calculation, transaction rollbacks.
-  4. **Library Management System** (Medium, ~45m) — Abstract Book vs physical BookItem copies, membership tiers & borrowing quotas, FIFO hold queues, fine calculation strategies, catalog search.
-  5. **Splitwise (Expense Sharing System)** (Medium, ~45m) — Multi-user groups, Equal/Exact/Percentage splits, real-time balance sheets, min-cash-flow debt simplification graph algorithm.
-  6. **Movie Ticket Booking (BookMyShow)** (Hard, ~60m) — Cinema halls, tiered seat layouts, high-concurrency temporary seat locking with TTL, dynamic pricing, and payment confirmation.
-  7. **Snake and Ladder Board Game** (Easy, ~30m) — Configurable $N$-cell board, polymorphic jump entities (Snakes/Ladders), pluggable dice rolling strategies, FIFO player turn rotation.
-  8. **Automated Teller Machine (ATM)** (Medium, ~45m) — Hardware abstraction, state-pattern session lifecycle, Chain of Responsibility cash note dispensing ($100, $50, $20, $10), PIN lockout.
-  9. **Rate Limiter & API Throttling Library** (Hard, ~60m) — Pluggable throttling algorithms (Token Bucket, Sliding Window Counter), multi-tier client quotas, thread-safe atomic execution.
-  10. **Chess Game Engine** (Hard, ~60m) — 8x8 board, polymorphic piece movement rules (King, Queen, Rook, Bishop, Knight, Pawn), move validation, check/checkmate detection, and Command-pattern move history.
-- **Rich Practice Workspace**:
-  - **Class Design Studio**: Add/edit/remove classes, single responsibilities (SRP), typed methods, attributes, and relationships (Composition, Aggregation, Inheritance, Implementation).
-  - **Live Mermaid Class Diagram**: Live SVG rendering of class diagrams with an instant **"Sync from Classes"** generator.
-  - **Architecture & Trade-offs**: Free-form request lifecycle explanation, assumptions, and multi-select design pattern pills (Strategy, Factory, Observer, State, Singleton, Command, etc.).
-- **Dual-Layer Explainable Evaluation**:
-  - **Deterministic Engine (`RuleBasedEvaluator`)**: Evaluates 8 static checks (requirements keyword coverage, God class detection, interface polymorphism, relationship integrity, SOLID compliance, edge cases).
-  - **AI Reasoning Layer (`AIEvaluator`)**: Plugs into Google Gemini or OpenAI to provide deep qualitative critique, nuance on coupling/cohesion, and actionable recommendations (*"Move payment processing from ParkingLot to PaymentService because..."*).
-  - **Graceful Fallback (`CompositeEvaluator`)**: Automatically falls back to deterministic analysis if AI APIs are unconfigured or fail—learner work is never lost.
-- **Attempt History & Progression**:
-  - Immutable past attempts.
-  - Grouped attempts by problem with comparative score progression and "Try Again" re-attempts.
+<br/>
+
+[![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite_6-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Python](https://img.shields.io/badge/Python_3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django_6.0-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![DRF](https://img.shields.io/badge/Django_REST_Framework-A30000?style=for-the-badge&logo=django&logoColor=white)](https://www.django-rest-framework.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+
+<br/>
+
+[🌟 Key Highlights](#-key-highlights) •
+[🧩 10 Canonical Problems](#-10-canonical-lld-challenges) •
+[🎨 Practice Studio](#-interactive-practice-studio) •
+[🧠 Evaluation Engine](#-dual-layer-evaluation-engine) •
+[🚀 Quick Start](#-quick-start-guide) •
+[📡 API Reference](#-rest-api-reference)
 
 ---
 
-## 🛠️ Technology Stack
+</div>
 
-| Layer | Technologies |
-| :--- | :--- |
-| **Frontend** | React 19, TypeScript, Vite, Tailwind CSS v4, Lucide Icons, Mermaid.js, Axios, React Router v7 |
-| **Backend** | Python 3.13, Django 6, Django REST Framework, Django CORS Headers |
-| **Database** | SQLite (default for development/demo) / PostgreSQL ready |
-| **Evaluation** | Abstract `SolutionEvaluator` supporting `RuleBasedEvaluator`, `AIEvaluator` (Gemini / OpenAI), and `CompositeEvaluator` |
-| **Testing** | Pytest, Pytest-Django, Vite build runner |
+## 🌟 Key Highlights
+
+- 🔄 **End-to-End Learner Journey**: `Choose Problem` ➔ `Analyze Requirements` ➔ `Design Classes` ➔ `Generate UML` ➔ `Submit` ➔ `Deterministic & AI Evaluation` ➔ `Iterate & Improve`.
+- 📐 **Interactive Class Design Studio**: Add and edit classes, define Single Responsibility Principle (SRP) contracts, specify typed methods and attributes, and model relationships (Inheritance, Implementation, Composition, Aggregation).
+- 📊 **Real-time Mermaid UML Visualizer**: Generates instant, clean UML class diagrams with one-click **"Sync from Classes"** capability.
+- 🎯 **Dual-Layer Explainable Feedback Engine**:
+  - **Deterministic Rules Engine**: 8 automated static checks (Requirements Keyword Coverage, God Class Prevention, Polymorphism & Abstraction, Relationship Integrity, SOLID principles).
+  - **AI Reasoning Layer (DeepSeek / Gemini / OpenAI)**: Context-aware qualitative critique, coupling analysis, and concrete architectural suggestions.
+  - **Zero-Failure Fallback**: Automatically operates in deterministic mode if AI API keys are not supplied.
+- 📈 **Attempt History & Progression Tracking**: Preserves past attempts, tracks score improvements, and supports iterative **"Try Again"** workflows.
+
+---
+
+## 🔁 Learner Workflow
+
+```mermaid
+flowchart LR
+    A[Browse 10 LLD Problems] --> B[Start Attempt]
+    B --> C[Class Design Studio]
+    C --> D[Live Mermaid UML]
+    D --> E[Submit Solution]
+    E --> F[Dual Evaluation Engine]
+    F --> G[Deterministic Checks]
+    F --> H[AI Critique & Advice]
+    G --> I[9-Dimension Score Card]
+    H --> I
+    I --> J[Attempt History & Retry]
+```
+
+---
+
+## 🧩 10 Canonical LLD Challenges
+
+Each problem comes pre-seeded with realistic interview requirements, edge cases, hints, and expected design patterns:
+
+| # | Problem | Difficulty | Est. Time | Key Patterns & Concepts Tested |
+| :---: | :--- | :---: | :---: | :--- |
+| **01** | **Parking Lot System** | `🟡 Medium` | ~45 min | Strategy (Pricing/Allocation), Factory, Polymorphic Spot Sizing |
+| **02** | **Elevator Control Bank** | `🔴 Hard` | ~60 min | State Machine, SCAN/LOOK Dispatcher Strategy, Observer |
+| **03** | **Vending Machine System** | `🟢 Easy` | ~30 min | State Pattern, Optimal Coin Change Calculation, Inventory Lock |
+| **04** | **Library Management** | `🟡 Medium` | ~45 min | Book vs BookItem Abstraction, FIFO Reservation, Fine Strategy |
+| **05** | **Splitwise (Expense Sharing)** | `🟡 Medium` | ~45 min | Equal/Exact/Percent Splits, Debt Minimization Graph Algorithm |
+| **06** | **Movie Ticket Booking** | `🔴 Hard` | ~60 min | Temporary Seat Locking with TTL, Concurrency, Dynamic Pricing |
+| **07** | **Snake & Ladder Game** | `🟢 Easy` | ~30 min | Board Entity Polymorphism, Pluggable Dice Strategy, Turn Manager |
+| **08** | **ATM System** | `🟡 Medium` | ~45 min | State Pattern Lifecycle, Chain of Responsibility Note Dispenser |
+| **09** | **API Rate Limiter Library** | `🔴 Hard` | ~60 min | Token Bucket & Sliding Window Strategies, Atomic Concurrency |
+| **10** | **Chess Game Engine** | `🔴 Hard` | ~60 min | Polymorphic Piece Rules, Command Pattern Move History, Checkmate |
+
+---
+
+## 🎨 Interactive Practice Studio
+
+<table width="100%">
+<tr>
+<td width="50%" valign="top">
+
+### 1. Class Design Studio
+- Define class name, package, type (Class, Abstract Class, Interface).
+- Add typed fields with visibility modifiers (`+public`, `-private`, `#protected`).
+- Define methods with parameter signatures and return types.
+- Set up relationships:
+  - `--|>` Inheritance
+  - `..|>` Interface Implementation
+  - `*--` Composition
+  - `o--` Aggregation
+
+</td>
+<td width="50%" valign="top">
+
+### 2. Live Mermaid UML Studio
+- Instant visualization of classes and relationships as an interactive SVG diagram.
+- One-click **"Sync from Classes"** to auto-generate UML syntax.
+- Real-time syntax error validation.
+- Free-form architecture notes and Design Pattern tagging (Strategy, Factory, Observer, State, Command, etc.).
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🧠 Dual-Layer Evaluation Engine
+
+The platform evaluates solutions across **9 core dimensions**:
+
+```
+ 1. Requirements Coverage       6. Extensibility & Open-Closed
+ 2. God Class Prevention        7. Appropriate Design Patterns
+ 3. Polymorphism & Abstraction  8. Data Modeling Integrity
+ 4. Coupling & Cohesion         9. Edge Case Resilience
+ 5. SOLID Principles
+```
+
+### Deterministic vs. AI-Assisted Evaluation
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Submission Evaluation                    │
+└──────────────────────────────┬──────────────────────────────┘
+                               │
+               ┌───────────────┴───────────────┐
+               ▼                               ▼
+  ┌─────────────────────────┐     ┌─────────────────────────┐
+  │  RuleBasedEvaluator     │     │  AIEvaluator            │
+  │  (Static Analysis)      │     │  (DeepSeek/Gemini/GPT)  │
+  ├─────────────────────────┤     ├─────────────────────────┤
+  │ • Requirements keywords │     │ • Nuanced OOP critique  │
+  │ • God class detection   │     │ • Coupling concerns     │
+  │ • Abstract hierarchies  │     │ • Actionable next steps │
+  │ • Relationship validity │     │ • Refactoring advice    │
+  └────────────┬────────────┘     └────────────┬────────────┘
+               │                               │
+               └───────────────┬───────────────┘
+                               ▼
+  ┌─────────────────────────────────────────────────────────┐
+  │              Consolidated Feedback Report               │
+  │   - Weighted Score (0 - 100)                            │
+  │   - 9-Dimension Breakdown                               │
+  │   - Strengths & Key Areas for Growth                    │
+  │   - Specific, Line-by-Line Actionable Recommendations   │
+  └─────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🛠️ Tech Stack & Architecture
+
+| Layer | Technology | Details |
+| :--- | :--- | :--- |
+| **Frontend** | React 19 + TypeScript | High-performance modern UI with typed state management |
+| **Styling** | Tailwind CSS v4 | Clean dark/light modern developer aesthetic |
+| **Diagrams** | Mermaid.js | Live client-side UML rendering |
+| **Backend** | Python 3.13 + Django 6 | Clean Architecture with Domain, Service, and API separation |
+| **API** | Django REST Framework | RESTful endpoints with full serialization and validation |
+| **Evaluators** | Extensible Evaluator Pattern | `RuleBasedEvaluator`, `AIEvaluator`, `CompositeEvaluator` |
+| **Testing** | Pytest + Pytest-Django | Comprehensive unit, service, and API integration test suite |
 
 ---
 
 ## 🚀 Quick Start Guide
 
 ### Prerequisites
-- Python 3.10+
-- Node.js 18+ and npm
+- **Python**: `3.10` or higher
+- **Node.js**: `18.x` or higher
+- **npm**: `9.x` or higher
 
-### 1. Backend Setup
+---
+
+### 1. Clone & Setup Repository
 
 ```bash
-# Navigate to backend (or project root with virtual environment)
+git clone https://github.com/ffhfgfh/LLD-Practice-Platform.git
+cd LLD-Practice-Platform
+```
+
+---
+
+### 2. Backend Setup (Django)
+
+```bash
+# Navigate to backend directory
 cd backend
 
-# Create and activate virtual environment (Windows)
+# Create virtual environment
 python -m venv venv
-.\venv\Scripts\activate
 
-# (Linux / macOS)
-# python3 -m venv venv
+# Activate virtual environment
+# Windows:
+.\venv\Scripts\activate
+# macOS/Linux:
 # source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Run migrations and seed LLD problems
+# Run migrations and seed the 10 canonical LLD problems
 python manage.py makemigrations core
 python manage.py migrate
 python manage.py seed_data
 
-# Start Django development server (runs on http://127.0.0.1:8000)
+# Start Django development server (default: http://127.0.0.1:8000)
 python manage.py runserver
 ```
 
-### 2. Frontend Setup
+---
 
-In a separate terminal window:
+### 3. Frontend Setup (React + Vite)
+
+In a new terminal window:
 
 ```bash
+# Navigate to frontend directory
 cd frontend
 
-# Install npm dependencies
+# Install npm packages
 npm install
 
-# Start Vite development server (runs on http://localhost:5173)
+# Start Vite development server (default: http://localhost:5173)
 npm run dev
 ```
 
-Open your browser at **`http://localhost:5173`**.
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## ⚙️ Environment Variables Configuration
+### 4. Optional: Environment Configuration
 
 Copy `.env.example` to `.env` in the root or `backend/` directory:
 
 ```env
 # Django Settings
-SECRET_KEY=django-insecure-lld-practice-platform-secret-key-2026
+SECRET_KEY=your-django-secret-key
 DEBUG=True
 
-# Evaluator Provider Configuration
-# Options: 'composite' (default), 'rule_based', 'gemini', 'openai'
+# Evaluator Provider: 'composite' (default), 'rule_based', 'deepseek', 'gemini', 'openai'
 EVALUATOR_TYPE=composite
 
-# AI Provider API Keys (Optional - deterministic evaluation works even if empty)
+# AI Provider Keys (Optional: Leave empty for 100% deterministic evaluation)
+DEEPSEEK_API_KEY=your_deepseek_api_key_here
 GEMINI_API_KEY=your_gemini_api_key_here
 OPENAI_API_KEY=your_openai_api_key_here
-
-# AI Model Overrides
-GEMINI_MODEL=gemini-1.5-flash
-OPENAI_MODEL=gpt-4o-mini
 ```
-
-> **Note**: If no `GEMINI_API_KEY` or `OPENAI_API_KEY` is provided, the platform automatically runs in deterministic evaluation mode. Zero configuration required to test the complete user journey!
 
 ---
 
 ## 🧪 Running Automated Tests
 
-Run backend unit and integration tests using pytest:
-
 ```bash
-# Run all tests in backend
-.\venv\Scripts\pytest backend -v
-```
+# Run backend test suite with Pytest
+cd backend
+pytest -v
 
-### Test Coverage Summary:
-- `test_evaluators.py`: Unit tests for `RuleBasedEvaluator`, God class detection, `CompositeEvaluator` fallback, and `SolutionEvaluator` abstraction substitution.
-- `test_services.py`: Tests for `AttemptService` lifecycle, draft saving, submission validation, attempt immutability rules, and state transitions.
-- `test_api.py`: Integration tests for `/api/problems/`, `/api/attempts/`, draft saving, submit & evaluate endpoint, history, and dashboard.
-
-To test the frontend TypeScript build:
-
-```bash
-cd frontend
+# Run frontend build check
+cd ../frontend
 npm run build
 ```
 
@@ -149,95 +273,79 @@ npm run build
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
-| `GET` | `/api/dashboard/` | High-level learner statistics, recent attempts, recommended problems |
-| `GET` | `/api/problems/` | List all problems (supports `?difficulty=` and `?search=`) |
-| `GET` | `/api/problems/:id/` | Get full problem statement, requirements, constraints, hints |
-| `POST` | `/api/attempts/` | Create a new practice attempt (`{ "problem_id": "..." }`) |
-| `GET` | `/api/attempts/:id/` | Retrieve attempt with solution, class designs, and evaluation |
-| `PUT` | `/api/attempts/:id/` | Save draft solution & classes (only allowed while in `DRAFT` state) |
-| `POST` | `/api/attempts/:id/submit/` | Validate and submit attempt; executes evaluation immediately |
-| `POST` | `/api/attempts/:id/evaluate/` | Retry evaluation on a submitted/failed attempt |
-| `GET` | `/api/evaluations/:id/` | Get detailed evaluation results and feedback items |
-| `GET` | `/api/history/` | Get all past attempts grouped by problem |
+| `GET` | `/api/dashboard/` | Learner progress summary, stats, and recommended problems |
+| `GET` | `/api/problems/` | List all 10 problems (filter by `?difficulty=` or `?search=`) |
+| `GET` | `/api/problems/:id/` | Detailed requirements, constraints, hints, and diagrams |
+| `POST` | `/api/attempts/` | Initialize a new practice attempt (`{"problem_id": "<id>"}`) |
+| `GET` | `/api/attempts/:id/` | Fetch current attempt state, draft solution, and classes |
+| `PUT` | `/api/attempts/:id/` | Auto-save draft classes, diagram, and architectural notes |
+| `POST` | `/api/attempts/:id/submit/` | Submit solution and execute evaluation pipeline |
+| `GET` | `/api/evaluations/:id/` | Get evaluation report, 9-category scores, and recommendations |
+| `GET` | `/api/history/` | View past attempt history grouped by problem |
 
 ---
 
 ## 📂 Project Structure
 
 ```
-project2/
+LLD-Practice-Platform/
 ├── backend/
-│   ├── lld_platform/          # Django project settings & root URLs
+│   ├── lld_platform/          # Django project settings & URL configuration
 │   ├── core/
-│   │   ├── domain/            # Pure domain layer (models, enums, interfaces)
+│   │   ├── domain/            # Pure domain layer (Dataclasses, Enums, Interfaces)
 │   │   │   ├── enums.py       # Difficulty, AttemptStatus, EvaluationCategory
-│   │   │   ├── models.py      # Dataclasses: DomainProblem, DomainSolution, etc.
+│   │   │   ├── models.py      # DomainProblem, DomainSolution, DomainClass
 │   │   │   └── interfaces.py  # SolutionEvaluator interface
 │   │   ├── models.py          # Django ORM models
 │   │   ├── serializers.py     # DRF serializers
-│   │   ├── views.py           # REST API endpoints & ViewSets
+│   │   ├── views.py           # REST API ViewSets & endpoints
 │   │   ├── urls.py            # API routing
-│   │   ├── services/          # Service layer
-│   │   │   ├── attempt_service.py     # Attempt lifecycle & immutability
-│   │   │   ├── evaluation_service.py  # Evaluation orchestration
-│   │   │   └── evaluators/            # Strategy implementations
-│   │   │       ├── base.py
-│   │   │       ├── rule_based.py      # Deterministic 8-pass evaluator
-│   │   │       ├── ai_evaluator.py    # Gemini & OpenAI evaluator
+│   │   ├── services/          # Business logic & orchestrators
+│   │   │   ├── attempt_service.py     # Attempt state & immutability lifecycle
+│   │   │   ├── evaluation_service.py  # Evaluation pipeline runner
+│   │   │   └── evaluators/            # Pluggable evaluator strategies
+│   │   │       ├── rule_based.py      # Deterministic 8-pass static analyzer
+│   │   │       ├── ai_evaluator.py    # DeepSeek / Gemini / OpenAI adapter
 │   │   │       ├── composite_evaluator.py
 │   │   │       └── factory.py
 │   │   ├── management/commands/
-│   │   │   └── seed_data.py   # Seeder for 4 complete LLD problems
-│   │   └── tests/             # Automated test suite
+│   │   │   └── seed_data.py   # Seeder for 10 complete LLD challenges
+│   │   └── tests/             # Automated test suite (API, services, evaluators)
 │   ├── manage.py
-│   ├── pytest.ini
 │   └── requirements.txt
 ├── frontend/
 │   ├── src/
-│   │   ├── types/             # TypeScript interfaces
-│   │   ├── services/          # Typed API client
 │   │   ├── components/
-│   │   │   ├── layout/        # Navbar, Footer, Layout
 │   │   │   ├── common/        # Badge, Button, Card, Spinner, ErrorAlert, StatCard
+│   │   │   ├── layout/        # Navbar, Footer, Layout wrapper
 │   │   │   ├── problems/      # ProblemCard, RequirementsList, Details
-│   │   │   ├── practice/      # ClassCard, ClassEditorModal, MermaidViewer, Architecture
+│   │   │   ├── practice/      # ClassCard, ClassEditorModal, MermaidViewer, ArchitectureEditor
 │   │   │   ├── evaluation/    # ScoreCard, CategoryScores, Strengths, FeedbackList
 │   │   │   └── history/       # AttemptHistoryCard, AttemptComparisonModal
-│   │   ├── pages/             # Dashboard, ProblemList, ProblemDetail, Practice, Feedback, History
+│   │   ├── pages/             # Dashboard, Problems, Practice, Feedback, History
+│   │   ├── services/api.ts    # Axios REST API client
+│   │   ├── types/index.ts     # TypeScript domain definitions
 │   │   ├── App.tsx
-│   │   ├── main.tsx
-│   │   └── index.css
+│   │   └── main.tsx
 │   ├── package.json
 │   └── vite.config.ts
-├── README.md
-├── RESEARCH.md
+├── .env.example
+├── .gitignore
 ├── DESIGN.md
+├── RESEARCH.md
 ├── AI_USAGE.md
-└── .env.example
+└── README.md
 ```
 
 ---
 
-## 🎯 Verification & Demonstration Walkthrough
+## 🤝 Contributing & License
 
-1. **Dashboard (`/`)**: View overview stats, recommended problems, and click **"Practice Now"** on Parking Lot.
-2. **Problem Requirements (`/problems/parking-lot`)**: Review vehicle types, spot types, multi-floor constraints, design considerations, and hints. Click **"Start New Attempt"**.
-3. **Practice Studio (`/practice/:attemptId`)**:
-   - Add classes (e.g. `ParkingLot`, `ParkingSpot`, `Vehicle`, `SpotAllocationStrategy`).
-   - Click **"Sync from Classes"** on the Mermaid Diagram tab to generate UML automatically.
-   - Enter solution explanation and select design pattern pills (e.g. `Strategy`, `Factory`).
-   - Click **"Save Draft"** &rarr; notice saved status.
-   - Click **"Submit & Evaluate"**.
-4. **Explainable Feedback (`/attempts/:attemptId/feedback`)**:
-   - View overall score and 9-category breakdown.
-   - Read **"What You Did Well"**, **"Areas for Growth"**, and **"Actionable Next Steps"**.
-   - Filter feedback by **Deterministic Checks** vs **AI Suggestions**.
-   - Click **"Review Submitted Solution"** to compare your solution with the feedback.
-5. **Attempt History (`/attempts`)**:
-   - View your attempts grouped by problem.
-   - Click **"Try Again"** to launch Attempt #2 without overwriting Attempt #1.
-#   L L D - P r a c t i c e - P l a t f o r m 
- 
- #   L L D - P r a c t i c e - P l a t f o r m 
- 
- 
+Contributions, problem additions, and feedback are always welcome!
+Feel free to open an [Issue](https://github.com/ffhfgfh/LLD-Practice-Platform/issues) or submit a [Pull Request](https://github.com/ffhfgfh/LLD-Practice-Platform/pulls).
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+<div align="center">
+  <sub>Built with ❤️ for software engineers mastering Object-Oriented & Low-Level Design.</sub>
+</div>
