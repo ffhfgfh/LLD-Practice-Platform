@@ -17,7 +17,8 @@ db.sqlite3
 backend/db.sqlite3
 .pytest_cache/
 
-# Node & Frontend
+# Build and Documentation Artifacts
+docs_pdf/
 node_modules/
 frontend/node_modules/
 dist/
