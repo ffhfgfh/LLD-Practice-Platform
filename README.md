@@ -236,6 +236,8 @@ project2/
 5. **Attempt History (`/attempts`)**:
    - View your attempts grouped by problem.
    - Click **"Try Again"** to launch Attempt #2 without overwriting Attempt #1.
-#   L L D - P r a c t i c e - P l a t f o r m  
- #   L L D - P r a c t i c e - P l a t f o r m  
+#   L L D - P r a c t i c e - P l a t f o r m 
+ 
+ #   L L D - P r a c t i c e - P l a t f o r m 
+ 
  
